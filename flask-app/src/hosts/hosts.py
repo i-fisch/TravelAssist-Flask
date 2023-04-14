@@ -122,7 +122,7 @@ def get_activities():
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
-    # use cursor to query the database for a list of lodgings
+    # use cursor to query the database for a list of activities
     cursor.execute('SELECT * FROM Activities')
 
     # grab the column headers from the returned data
