@@ -98,14 +98,23 @@ def delete_itinerary():
 
     return "Success!"
 
-# get all activities from the database
-@hosts.route('/Activities', methods=['GET'])
-def get_activities():
+# get all activities from a certain itinerary
+@travelers.route('/Act_Itin/{ItineraryName}', methods=['GET'])
+def get_itin_activities():
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
-    # use cursor to query the database for a list of lodgings
-    cursor.execute('SELECT * FROM Activities')
+    the_data = request.get_json()
+    current_app.logger.info(the_data)
+
+    i_name = the_data['ItineraryName']
+
+    the_query = 'SELECT * FROM Act_Itin '
+    the_query += 'WHERE ItineraryName = "' + i_name + '"'
+
+    current_app.logger.info(the_query)
+    cursor = db.get_db().cursor()
+    cursor.execute(the_query)
 
     # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
@@ -124,28 +133,22 @@ def get_activities():
 
     return jsonify(json_data)
 
-# add a new activity to the databse
-@hosts.route('/Activities', methods=['POST'])
-def add_new_activity():
+# add a new activity to an itinerary
+@travelers.route('/Act_Itin', methods=['POST'])
+def add_itin_activity():
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
     a_name = the_data['ActivityName']
-    a_location = the_data['ActivityLocation']
-    a_description = the_data['ActivityDescription']
-    a_category = the_data['ActivityCategory']
-    a_price = the_data['ActivityPrice']
-    a_availability = the_data['ActivityAvailability']
-    a_username = the_data['ActivityUsername']
+    a_location = the_data['Location']
+    i_name = the_data['ItineraryName']
+    a_time = the_data['Datetime']
 
-    the_query = 'INSERT INTO Activities (Name, Location, Description, Category, Price, Availability, HostUser) VALUES ("'
+    the_query = 'INSERT INTO Act_Itin (ActivityName, Location, ItineraryName, Datetime) VALUES ("'
     the_query += a_name + '", "'
     the_query += a_location + '", "'
-    the_query += a_description + '", "'
-    the_query += a_category + '", '
-    the_query += str(a_price) + ', '
-    the_query += str(a_availability) + ', "'
-    the_query += a_username + '")'
+    the_query += i_name + '", '
+    the_query += str(a_time) + ')'
 
     current_app.logger.info(the_query)
     cursor = db.get_db().cursor()
@@ -154,25 +157,22 @@ def add_new_activity():
 
     return "Success!"
 
-# update an activity in the databse
-@hosts.route('/Activities/{Location}/{Name}', methods=['PUT'])
-def update_activity():
+# update an activity in an itinerary
+@travelers.route('/Act_Itin/{ItineraryName}', methods=['PUT'])
+def update_itin_act():
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
     a_name = the_data['ActivityName']
-    a_location = the_data['ActivityLocation']
-    a_description = the_data['ActivityDescription']
-    a_category = the_data['ActivityCategory']
-    a_price = the_data['ActivityPrice']
-    a_availability = the_data['ActivityAvailability']
+    a_location = the_data['Location']
+    i_name = the_data['ItineraryName']
+    a_time = the_data['Datetime']
 
-    the_query = 'UPDATE Activities SET Description = "'
-    the_query += a_description + '", Category = "'
-    the_query += a_category + '", Price = '
-    the_query += str(a_price) + ', Availability = '
-    the_query += str(a_availability) + ' '
-    the_query += 'WHERE Location = "' + a_location + '" AND Name = "' + a_name + '"'
+    the_query = 'UPDATE Act_Itin SET ActivityName = "'
+    the_query += a_name + '", Location = "'
+    the_query += a_location + '", Datetime = '
+    the_query += str(a_time) + ' '
+    the_query += 'WHERE ItineraryName = "' + i_name + '"'
 
     current_app.logger.info(the_query)
     cursor = db.get_db().cursor()
@@ -181,18 +181,21 @@ def update_activity():
 
     return "Success!"
 
-# delete an activity in the databse
-@hosts.route('/Activities/{Location}/{Name}', methods=['DELETE'])
+# delete an activity in an itinerary
+@travelers.route('/Act_Itin/{ItineraryName}/{Location}/{ActivityName}', methods=['DELETE'])
 def delete_activity():
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
     a_name = the_data['ActivityName']
-    a_location = the_data['ActivityLocation']
+    i_name = the_data['ItineraryName']
+    a_location = the_data['Location']
 
-    the_query = 'DELETE FROM Activites WHERE Location = "'
-    the_query += a_location + '" AND Name = "'
-    the_query += a_name + '"'
+
+    the_query = 'DELETE FROM Act_Itin WHERE ItineraryName = "'
+    the_query += i_name + '" AND ActivityName = "'
+    the_query += a_name + '" AND Location = "'
+    the_query += a_location + '"'
 
     current_app.logger.info(the_query)
     cursor = db.get_db().cursor()
