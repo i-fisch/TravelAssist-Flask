@@ -66,13 +66,13 @@ def add_new_lodging():
     return "Success!"
 
 # update a lodging in the databse
-@hosts.route('/Lodgings/{City}/{Name}', methods=['PUT'])
-def update_lodging():
+@hosts.route('/Lodgings/<LodgingCity>/<LodgingName>', methods=['PUT'])
+def update_lodging(LodgingCity, LodgingName):
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
-    l_name = the_data['LodgingName']
-    l_city = the_data['LodgingCity']
+    l_name = LodgingName
+    l_city = LodgingCity
     l_country = the_data['LodgingCountry']
     l_region = the_data['LodgingRegion']
     l_street = the_data['LodgingStreet']
@@ -97,13 +97,13 @@ def update_lodging():
     return "Success!"
 
 # delete a lodging in the databse
-@hosts.route('/Lodgings/{City}/{Name}', methods=['DELETE'])
-def delete_lodging():
+@hosts.route('/Lodgings/<LodgingsCity>/<LodgingsName>', methods=['DELETE'])
+def delete_lodging(LodgingsCity, LodgingsName):
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
-    l_name = the_data['LodgingName']
-    l_city = the_data['LodgingCity']
+    l_name = LodgingsName
+    l_city = LodgingsCity
 
     the_query = 'DELETE FROM Lodgings WHERE City = "'
     the_query += l_city + '" AND Name = "'
@@ -173,13 +173,13 @@ def add_new_activity():
     return "Success!"
 
 # update an activity in the databse
-@hosts.route('/Activities/{Location}/{Name}', methods=['PUT'])
-def update_activity():
+@hosts.route('/Activities/<ActivityLocation>/<ActivityName>', methods=['PUT'])
+def update_activity(ActivityLocation, ActivityName):
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
-    a_name = the_data['ActivityName']
-    a_location = the_data['ActivityLocation']
+    a_name = ActivityName
+    a_location = ActivityLocation
     a_description = the_data['ActivityDescription']
     a_category = the_data['ActivityCategory']
     a_price = the_data['ActivityPrice']
@@ -200,13 +200,13 @@ def update_activity():
     return "Success!"
 
 # delete an activity in the databse
-@hosts.route('/Activities/{Location}/{Name}', methods=['DELETE'])
-def delete_activity():
+@hosts.route('/Activities/<ActivityLocation>/<ActivityName>', methods=['DELETE'])
+def delete_activity(ActivityLocation, ActivityName):
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
-    a_name = the_data['ActivityName']
-    a_location = the_data['ActivityLocation']
+    a_name = ActivityName
+    a_location = ActivityLocation
 
     the_query = 'DELETE FROM Activites WHERE Location = "'
     the_query += a_location + '" AND Name = "'

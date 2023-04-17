@@ -1,6 +1,9 @@
 SHOW DATABASES;
 CREATE DATABASE TravelAssist;
 
+grant all privileges on TravelAssist.* to 'webapp'@'%';
+flush privileges;
+
 USE TravelAssist;
 
 CREATE TABLE IF NOT EXISTS Hosts (

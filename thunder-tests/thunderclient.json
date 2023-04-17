@@ -40,5 +40,133 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "3767cb66-13e6-4524-aed0-99713d42b35d",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testGet",
+    "url": "localhost:8001/h/Lodgings",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-04-17T20:43:20.924Z",
+    "modified": "2023-04-17T21:13:06.235Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "28059bce-2600-405f-a08f-71ed7ba85fca",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testPost1",
+    "url": "localhost:8001/h/Lodgings",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-04-17T21:17:07.209Z",
+    "modified": "2023-04-17T21:25:42.797Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"LodgingName\": \"Name\",\n  \"LodgingCity\": \"Boston\",\n  \"LodgingCountry\": \"USA\",\n  \"LodgingRegion\": \"MA\",\n  \"LodgingStreet\": \"Huntington\",\n  \"LodgingStreetNumber\": 360,\n  \"LodgingZip\": 12345,\n  \"LodgingPhone\": 1112223344,\n  \"LodgingUsername\": \"harold72\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "27c437a6-9fc1-45e7-889d-c62789016e53",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testPost2",
+    "url": "localhost:8001/h/Lodgings",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2023-04-17T21:26:34.268Z",
+    "modified": "2023-04-17T21:28:06.939Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"LodgingName\": \"Other Name\",\n  \"LodgingCity\": \"New York City\",\n  \"LodgingCountry\": \"USA\",\n  \"LodgingRegion\": \"NY\",\n  \"LodgingStreet\": \"5th Avenue\",\n  \"LodgingStreetNumber\": 100,\n  \"LodgingZip\": 23456,\n  \"LodgingPhone\": 1112223355,\n  \"LodgingUsername\": \"Agnes72\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d2847d48-4265-421f-8482-e9d038cc5fb5",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testPut1",
+    "url": "localhost:8001/h/Lodgings/Boston/Name",
+    "method": "PUT",
+    "sortNum": 50000,
+    "created": "2023-04-17T21:28:47.682Z",
+    "modified": "2023-04-17T21:41:53.104Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"LodgingCountry\": \"USA\",\n  \"LodgingRegion\": \"MA\",\n  \"LodgingStreet\": \"Columbus\",\n  \"LodgingStreetNumber\": 24,\n  \"LodgingZip\": 12345,\n  \"LodgingPhone\": 1998887766\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "0f11b3c5-d7f1-49b4-b92c-8ec41d2d5410",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testPut2",
+    "url": "localhost:8001/h/Lodgings/Frankfort/The%20Lodge",
+    "method": "PUT",
+    "sortNum": 60000,
+    "created": "2023-04-17T21:49:44.825Z",
+    "modified": "2023-04-17T21:53:12.032Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"LodgingCountry\": \"USA\",\n  \"LodgingRegion\": \"Kentucky\",\n  \"LodgingStreet\": \"Blue\",\n  \"LodgingStreetNumber\": 27,\n  \"LodgingZip\": 40601,\n  \"LodgingPhone\": 1112224433\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "dc0d5c46-444f-41dd-a411-be0a71f6b627",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testDelete1",
+    "url": "localhost:8001/h/Lodgings/Boston/Name",
+    "method": "DELETE",
+    "sortNum": 70000,
+    "created": "2023-04-17T21:53:53.906Z",
+    "modified": "2023-04-17T21:55:32.459Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f06dd0af-1796-435d-95a6-10cb5c0b5d7d",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testDelete2",
+    "url": "localhost:8001/h/Lodgings/New%20York%20City/Other%20Name",
+    "method": "DELETE",
+    "sortNum": 80000,
+    "created": "2023-04-17T21:55:56.021Z",
+    "modified": "2023-04-17T21:57:17.734Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{}",
+      "form": []
+    },
+    "tests": []
   }
 ]

@@ -5,5 +5,12 @@
     "created": "2023-03-29T12:08:58.256Z",
     "sortNum": 10000,
     "folders": []
+  },
+  {
+    "_id": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "colName": "hostsLodgings",
+    "created": "2023-04-17T20:41:08.990Z",
+    "sortNum": 20000,
+    "folders": []
   }
 ]
