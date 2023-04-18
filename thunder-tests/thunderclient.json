@@ -600,5 +600,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "699515d2-608d-4b70-bc47-08e5719157a7",
+    "colId": "4582d421-7e35-4384-8e6a-28885a6b62f2",
+    "containerId": "",
+    "name": "testPost3",
+    "url": "localhost:8001/h/Activities",
+    "method": "POST",
+    "sortNum": 45000,
+    "created": "2023-04-18T16:11:51.323Z",
+    "modified": "2023-04-18T16:13:22.115Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"ActivityName\": \"Fun Beach Activity\",\n  \"ActivityLocation\": \"Miami\",\n  \"ActivityDescription\": \"Go to the beach in sunny Florida.\",\n  \"ActivityCategory\": \"Outdoors\",\n  \"ActivityPrice\": 15,\n  \"ActivityAvailability\": 30,\n  \"ActivityUsername\": \"harold72\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "14c28a01-5d68-4783-9f63-25dd370adc7c",
+    "colId": "c152f9cc-9153-46d8-b656-a80194eef010",
+    "containerId": "",
+    "name": "testPost3",
+    "url": "localhost:8001/h/Lodgings",
+    "method": "POST",
+    "sortNum": 45000,
+    "created": "2023-04-18T16:13:35.390Z",
+    "modified": "2023-04-18T16:14:32.339Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"LodgingName\": \"Beach Resort\",\n  \"LodgingCity\": \"Miami\",\n  \"LodgingCountry\": \"USA\",\n  \"LodgingRegion\": \"FL\",\n  \"LodgingStreet\": \"Calle Ocho\",\n  \"LodgingStreetNumber\": 12,\n  \"LodgingZip\": 33077,\n  \"LodgingPhone\": 1112223456,\n  \"LodgingUsername\": \"harold72\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
