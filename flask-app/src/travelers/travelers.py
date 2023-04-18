@@ -158,13 +158,16 @@ def add_itin_activity():
     return "Success!"
 
 # update an activity in an itinerary
-@travelers.route('/Act_Itin/<ItineraryName>', methods=['PUT'])
-def update_itin_act(ItineraryName):
+@travelers.route('/Act_Itin/<ItineraryName>/<Location>/<ActivityName>', methods=['PUT'])
+def update_itin_act(ItineraryName, Location, ActivityName):
     the_data = request.get_json()
     current_app.logger.info(the_data)
 
-    a_name = the_data['ActivityName']
-    a_location = the_data['Location']
+    # changed to include location and activity name as inputs
+    # bc broke thunderclient
+    # but also bc are part of pk so can't refer to row in table w/o them
+    a_name = ActivityName
+    a_location = Location
     i_name = ItineraryName
     a_time = the_data['Datetime']
 
@@ -173,6 +176,8 @@ def update_itin_act(ItineraryName):
     the_query += a_location + '", Datetime = '
     the_query += str(a_time) + ' '
     the_query += 'WHERE ItineraryName = "' + i_name + '"'
+    the_query += ' AND ActivityName = "' + a_name + '"'
+    the_query += ' AND Location = "' + a_location + '"'
 
     current_app.logger.info(the_query)
     cursor = db.get_db().cursor()

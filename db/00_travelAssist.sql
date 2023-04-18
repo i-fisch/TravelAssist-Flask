@@ -138,8 +138,8 @@ VALUES ('President\'s Day Weekend', 75, 'Come celebrate president\'s day weekend
 
 CREATE TABLE IF NOT EXISTS Advertisements (
     Name VARCHAR(200) PRIMARY KEY,
-    StartDate DATETIME NOT NULL,
-    EndDate DATETIME NOT NULL,
+    StartDate DATETIME,
+    EndDate DATETIME,
     Cost INTEGER NOT NULL,
     HostAdvertiser VARCHAR(50),
     PlannerAdvertiser VARCHAR(50),
@@ -323,7 +323,7 @@ CREATE TABLE IF NOT EXISTS Act_Itin (
     ActivityName VARCHAR(200),
     Location VARCHAR(200),
     ItineraryName VARCHAR(200),
-    Datetime DATETIME NOT NULL,
+    Datetime DATETIME,
     PRIMARY KEY (ActivityName, Location, ItineraryName),
     FOREIGN KEY(ActivityName, Location)
            REFERENCES Activities(Name, Location),

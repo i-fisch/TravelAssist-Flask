@@ -208,7 +208,7 @@ def delete_activity(ActivityLocation, ActivityName):
     a_name = ActivityName
     a_location = ActivityLocation
 
-    the_query = 'DELETE FROM Activites WHERE Location = "'
+    the_query = 'DELETE FROM Activities WHERE Location = "'
     the_query += a_location + '" AND Name = "'
     the_query += a_name + '"'
 
