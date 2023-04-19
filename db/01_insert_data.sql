@@ -1,4 +1,4 @@
--- insert data for hosts table
+/* -- insert data for hosts table
 INSERT INTO Hosts(Username,FirstName,LastName,Gender,PhoneNumber,Email,HostPartner) VALUES ('hmaccoughen0','Hebert','MacCoughen','Bigender',1833771138,'hmaccoughen0@yellowpages.com',NULL);
 INSERT INTO Hosts(Username,FirstName,LastName,Gender,PhoneNumber,Email,HostPartner) VALUES ('clevecque1','Cesare','Levecque','Male',1995410476,'clevecque1@spotify.com',NULL);
 INSERT INTO Hosts(Username,FirstName,LastName,Gender,PhoneNumber,Email,HostPartner) VALUES ('vangrick2','Vitoria','Angrick','Female',1511763061,'vangrick2@goo.gl',NULL);
@@ -2345,3 +2345,4 @@ INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('DuBuque-Koelpi
 INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Lakin, Dickens and Runte','Lianhe','at turpis donec');
 INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Bins, Marvin and Bednar','Coruña, A','non sodales sed tincidunt eu felis fusce');
 INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Hegmann and Sons','Astghadzor','aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis');
+ */

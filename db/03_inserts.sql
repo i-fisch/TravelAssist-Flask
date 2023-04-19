@@ -1,4 +1,4 @@
-USE TravelAssist;
+/* USE TravelAssist;
 
 -- inserting Host_Disc data
 INSERT INTO Host_Disc(Username,Name,DealPercent) VALUES ('mcareless7x','Aivee',27);
@@ -8015,3 +8015,4 @@ INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Bednar and Son
 INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Crooks-Sporer','Shakhun’ya','risus dapibus augue vel accumsan');
 INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Hickle, Hermann and Kohler','Ljupina','nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium');
 INSERT INTO Act_Restrictions(Name,Location,Restrictions) VALUES ('Sporer and Sons','Batuan','dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris');
+ */
