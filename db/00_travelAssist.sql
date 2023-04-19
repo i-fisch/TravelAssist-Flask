@@ -8399,3 +8399,4 @@ INSERT INTO Discounts(Name,DealPercent,Description) VALUES ('Trilith',67,'Aliqua
 INSERT INTO Discounts(Name,DealPercent,Description) VALUES ('Rhynoodle',83,'Sed ante. Vivamus tortor.');
 INSERT INTO Discounts(Name,DealPercent,Description) VALUES ('Oba',65,'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
 INSERT INTO Discounts(Name,DealPercent,Description) VALUES ('Riffpath',97,'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
