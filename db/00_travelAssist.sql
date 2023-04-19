@@ -6,6 +6,7 @@ flush privileges;
 
 USE TravelAssist;
 
+-- Creating Hosts table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Hosts (
     Username VARCHAR(50) PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
@@ -23,6 +24,7 @@ VALUES ('harold72', 'harold', 'wilder', 'male', 1112223333, 'harold@yahoo.com');
 INSERT INTO Hosts
 VALUES ('Agnes72', 'agnes', 'wilder', 'female', 1112223333, 'agnes@yahoo.com', 'harold72');
 
+-- Creating Travelers table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Travelers (
     Username VARCHAR(50) PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
@@ -40,6 +42,7 @@ VALUES ('aishao', 'aisha', 'oliver', 'female', 48, 'aishao@gmail.com', 5000);
 INSERT INTO Travelers
 VALUES ('ameliam', 'amelia', 'mason', 'female', 21, 'ameliam@gmail.com', 100);
 
+-- Creating Planners table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Planners (
     Username VARCHAR(50) PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
@@ -55,6 +58,7 @@ VALUES ('georgew', 'george', 'washington', 1349874528, 'georgew@gmail.com', 1000
 INSERT INTO Planners
 VALUES ('edwinh', 'edwin', 'honoret', 1349874525, 'edwinh@gmail.com', 100, 'beginner');
 
+-- Creating Activities table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Activities (
     Name VARCHAR(200),
     Description VARCHAR(1000) NOT NULL,
@@ -73,6 +77,7 @@ VALUES ('Tree climbing', 'Climbing redwood trees.', 'California', 'Outdoors', 50
 INSERT INTO Activities
 VALUES ('Circus', 'Come see clowns and acrobats.', 'Wisconsin', 'Entertainment', 20, 100, 'Agnes72');
 
+-- Creating Lodgings table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Lodgings (
     Name VARCHAR(200),
     City VARCHAR(100),
@@ -93,6 +98,7 @@ VALUES ('H&A B&B', 'Madison', 'USA', 'Wisconsin', 'South Maine', 72, 53558, 1112
 INSERT INTO Lodgings
 VALUES ('The Lodge', 'Frankfort', 'USA', 'Kentucky', 'Green', 27, 40601, 1112224444, 'Agnes72');
 
+-- Creating Rooms table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Rooms (
     Name VARCHAR(200),
     City VARCHAR(100),
@@ -112,6 +118,7 @@ VALUES ('H&A B&B', 'Madison', 201, 'Field', 167, 2);
 INSERT INTO Rooms
 VALUES ('The Lodge', 'Frankfort', 532, 'Woods', 213, 1);
 
+-- Creating TravelGroups table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS TravelGroups (
     Name VARCHAR(100),
     Organizer VARCHAR(50),
@@ -124,6 +131,7 @@ VALUES ('Amelia\'s Group', 'Amelia', 'Wyoming');
 INSERT INTO TravelGroups
 VALUES ('Emanual\'s Group', 'Emanual', 'Antarctica');
 
+-- Creating Discounts table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Discounts (
     Name VARCHAR(200),
     DealPercent INTEGER,
@@ -136,6 +144,7 @@ VALUES ('BOGO', 50, 'Buy one night, get one night free.');
 INSERT INTO Discounts
 VALUES ('President\'s Day Weekend', 75, 'Come celebrate president\'s day weekend with us!');
 
+-- Creating Advertisements table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Advertisements (
     Name VARCHAR(200) PRIMARY KEY,
     StartDate DATETIME,
@@ -154,6 +163,7 @@ VALUES ('Come have fun', CURRENT_TIMESTAMP, '2023-12-12T12:00:01', 25, 'harold72
 INSERT INTO Advertisements(Name, StartDate, EndDate, Cost, PlannerAdvertiser)
 VALUES ('Merry Christmas', CURRENT_TIMESTAMP, '2023-12-23T12:00:01', 78, 'edwinh');
 
+-- Creating Itineraries table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Itineraries (
     Name VARCHAR(200),
     TravelerOrganizer VARCHAR(50),
@@ -171,6 +181,7 @@ VALUES ('Best Vacay', 'ameliam', 100);
 INSERT INTO Itineraries(Name, PlannerOrganizer, TotalPrice)
 VALUES ('My First Itinerary', 'edwinh', 500);
 
+-- Creating Pictures table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Pictures (
     LodgingName VARCHAR(200),
     City VARCHAR(100),
@@ -187,6 +198,7 @@ VALUES ('The Lodge', 'Frankfort', 'imageurl.com', 'OutsideView', 'View of outsid
 INSERT INTO Pictures
 VALUES ('H&A B&B', 'Madison', 'imageurl2.com', 'CuteDecor', 'Look at how cute our decor is.');
 
+-- Creating Reviews table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Reviews (
     Poster VARCHAR(50),
     Target VARCHAR(200),
@@ -210,6 +222,7 @@ VALUES ('Max', 'The Lodge', 'The Lodge sucks.', 0, 'The Lodge', 'Frankfort');
 INSERT INTO Reviews(Poster, Target, Comment, Rating, ActivityName, Location)
 VALUES ('Alex', 'Circus Review', 'Great experience!', 5, 'Circus', 'Wisconsin');
 
+-- Creating Trav_Act table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Trav_Act (
     Username VARCHAR(50),
     Name VARCHAR(200),
@@ -226,6 +239,7 @@ VALUES ('ameliam', 'Circus', 'Wisconsin');
 INSERT INTO Trav_Act
 VALUES ('emanr', 'Tree climbing', 'California');
 
+-- Creating Trav_Lodg table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Trav_Lodg (
     Username VARCHAR(50),
     Name VARCHAR(200),
@@ -242,6 +256,7 @@ VALUES ('ameliam', 'The Lodge', 'Frankfort');
 INSERT INTO Trav_Lodg
 VALUES ('emanr', 'H&A B&B', 'Madison');
 
+-- Creating Trav_Group table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Trav_Group (
     Username VARCHAR(50),
     Name VARCHAR(200),
@@ -258,6 +273,7 @@ VALUES ('ameliam', 'Amelia\'s Group', 'Amelia');
 INSERT INTO Trav_Group
 VALUES ('emanr', 'Emanual\'s Group', 'Emanual');
 
+-- Creating Host_Plan table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Host_Plan (
     HostUsername VARCHAR(50),
     PlannerName VARCHAR(50),
@@ -273,6 +289,7 @@ VALUES ('harold72', 'edwinh');
 INSERT INTO Host_Plan
 VALUES ('Agnes72', 'edwinh');
 
+-- Creating Host_Disc table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Host_Disc (
     Username VARCHAR(50),
     Name VARCHAR(200),
@@ -287,8 +304,9 @@ CREATE TABLE IF NOT EXISTS Host_Disc (
 INSERT INTO Host_Disc
 VALUES ('harold72', 'BOGO', 50);
 INSERT INTO Host_Disc
-VALUES ('Agnes72', 'President\'s Day Weekend', 75);
+VALUES ('Agnes72', "President\'s Day Weekend", 75);
 
+-- Creating Plan_Disc table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Plan_Disc (
     Username VARCHAR(50),
     Name VARCHAR(200),
@@ -303,8 +321,9 @@ CREATE TABLE IF NOT EXISTS Plan_Disc (
 INSERT INTO Plan_Disc
 VALUES ('edwinh', 'BOGO', 50);
 INSERT INTO Plan_Disc
-VALUES ('georgew', 'President\'s Day Weekend', 75);
+VALUES ('georgew', "President\'s Day Weekend", 75);
 
+-- Creating Trav_Plan table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Trav_Plan (
     TravelerUsername VARCHAR(50),
     PlannerUsername VARCHAR(50),
@@ -320,6 +339,7 @@ VALUES ('ameliam', 'edwinh');
 INSERT INTO Trav_Plan
 VALUES ('emanr', 'georgew');
 
+-- Creating Act_Itin table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Act_Itin (
     ActivityName VARCHAR(200),
     Location VARCHAR(200),
@@ -337,6 +357,7 @@ VALUES ('Circus', 'Wisconsin', 'Best vacay', CURRENT_TIMESTAMP);
 INSERT INTO Act_Itin
 VALUES ('Tree climbing', 'California', 'My first itinerary', CURRENT_TIMESTAMP);
 
+-- Creating TravGroup_Members table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS TravGroup_Members (
     Organizer VARCHAR(50),
     Name VARCHAR(200),
@@ -351,6 +372,7 @@ VALUES ('Amelia', 'Amelia\'s Group', 'Max');
 INSERT INTO TravGroup_Members
 VALUES ('Emanual', 'Emanual\'s Group', 'Alex');
 
+-- Creating Trav_Likes_Dislikes table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Trav_Likes_Dislikes (
     Username VARCHAR(50),
     Like_Dislike VARCHAR(200),
@@ -364,6 +386,7 @@ VALUES ('ameliam', 'Drinking');
 INSERT INTO Trav_Likes_Dislikes
 VALUES ('emanr', 'Sleeping');
 
+-- Creating Adv_TargetAudience table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Adv_TargetAudience (
     Name VARCHAR(200),
     TargetAudience VARCHAR(200),
@@ -377,6 +400,7 @@ VALUES ('Come have fun', 'Kids');
 INSERT INTO Adv_TargetAudience
 VALUES ('Merry Christmas', 'Families');
 
+-- Creating Act_Restrictions table and inserting 2 tuples
 CREATE TABLE IF NOT EXISTS Act_Restrictions (
     Name VARCHAR(200),
     Location VARCHAR(200),
