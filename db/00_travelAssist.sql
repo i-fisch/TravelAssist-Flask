@@ -214,7 +214,8 @@ CREATE TABLE IF NOT EXISTS Reviews (
            REFERENCES Lodgings(Name, City),
     FOREIGN KEY(ActivityName, Location)
            REFERENCES Activities(Name, Location)
-
+           ON UPDATE CASCADE
+           ON DELETE CASCADE
 );
 
 INSERT INTO Reviews(Poster, Target, Comment, Rating, LodgingName, City)
@@ -229,7 +230,9 @@ CREATE TABLE IF NOT EXISTS Trav_Act (
     Location VARCHAR(200),
     PRIMARY KEY (Username, Name, Location),
     FOREIGN KEY(Name, Location)
-           REFERENCES Activities(Name, Location),
+           REFERENCES Activities(Name, Location)
+           ON UPDATE CASCADE
+           ON DELETE CASCADE,
     FOREIGN KEY(Username)
            REFERENCES Travelers(Username)
 );
@@ -347,7 +350,9 @@ CREATE TABLE IF NOT EXISTS Act_Itin (
     Datetime DATETIME,
     PRIMARY KEY (ActivityName, Location, ItineraryName),
     FOREIGN KEY(ActivityName, Location)
-           REFERENCES Activities(Name, Location),
+           REFERENCES Activities(Name, Location)
+           ON UPDATE CASCADE
+           ON DELETE CASCADE,
     FOREIGN KEY(ItineraryName)
            REFERENCES Itineraries(Name)
 );
@@ -408,6 +413,8 @@ CREATE TABLE IF NOT EXISTS Act_Restrictions (
     PRIMARY KEY (Name, Location, Restrictions),
     FOREIGN KEY(Name, Location)
            REFERENCES Activities(Name, Location)
+           ON UPDATE CASCADE
+           ON DELETE CASCADE
 );
 
 INSERT INTO Act_Restrictions
