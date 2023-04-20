@@ -19,7 +19,7 @@ In the future, we hope to expand the usability of the app for hosts and traveler
 1. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`. 
 
 ## How to Use this Project
-After installing the containers, the project can be started by typing localhost:8080 into the search bar of a browser. The app can be imported from the partner GitHub repository TravelAssistApp. From there users can view different user personas and demo their actions.
+After installing the containers, the project can be started by typing localhost:8080 into the search bar of a browser. The app can be imported from the partner GitHub repository TravelAssistApp. From there users can view different user personas and demo their actions. We also recorded a [short video](https://drive.google.com/file/d/1vvhZ_5ySUZjJUbOkTWAd8jkttcu8jeUf/view?usp=sharing) that has an overview of our project's goals and code, and also demos the app.
 
 ## Contributions
 The contributors of this project were Isabella Fisch, Lavanya Goel, and Hannah Szeto. All group members contributed equally to the conceptual development and database creation. Once the project progressed into the UI phase, Hannah focused more on the data population and debugging  any errors in the database container. Isabella created the UI pages to make sure they were functional, aesthetic, and compliant with the blueprint routes. Lavanya connected the UI pages to the API queries and ensured the routes were producing the correct output.
